@@ -1,0 +1,32 @@
+{
+  "name" : "Boundary Consul Healthcheck Plugin",
+  "version" : "0.0.1",
+  "meterVersionRequired" : "4.2.1-618",
+  "unsupportedPlatforms" : [ ],
+  "tags" : "consul",
+  "description" : "Queries Consul health checks and returns events to Boundary on a status change of a given health check.",
+  "icon" : "icon.png",
+  "command_lua" : "boundary-meter init.lua",
+  "postExtract_lua" : "",
+  "ignore" : "node_modules",
+
+  "paramArray" : { "itemTitle" : ["source", "url"], "schemaTitle" : "Endpoint"},
+  "paramSchema" : [
+    {
+      "title" : "Poll Interval (sec)",
+      "name" : "pollInterval",
+      "description" : "The Poll Interval to call your endpoint in seconds. Ex. 30",
+      "type" : "integer",
+      "default" : 30,
+      "required" : true
+    },
+    {
+      "title": "Detailed Info",
+      "name": "detailedInfo",
+      "description": "(optional) Set to true to display additional info on passing health checks  (default = not set i.e. false)",
+      "type": "boolean",
+      "default": false,
+      "required": false
+    }
+  ]
+}

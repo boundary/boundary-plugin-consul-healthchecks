@@ -1,0 +1,31 @@
+{
+	"name": "boundary-plugin-consul-healthchecks",
+	"version": "0.0.1",
+	"private": false,
+	"description": "Queries Consul health checks and returns events to Boundary on a status change of a given health check.",
+	"main": "index.js",
+	"devDependencies": {},
+	"dependencies": {
+		"async": "0.2.x",
+		"graphdat-plugin-tools" : "0.0.1",
+		"request" : "2.27.x",
+		"underscore": "1.5.x"
+	},
+	"repository": {
+	"type": "git",
+	"url": "https://github.com/boundary/boundary-plugin-consul-healthchecks"
+	},
+	"keywords": [
+		"boundary",
+		"plugin",
+		"consul",
+		"healthcheck",
+		"poll"
+	],
+	"author": "Boundary <support@boundary.com>",
+	"license": "Apache v2",
+	"bugs": {
+		"url": "https://github.com/boundary/boundary-plugin-consul-healthchecks/issues"
+	},
+	"engine": "node >= 0.8.1"
+}
