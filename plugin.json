@@ -10,7 +10,6 @@
   "postExtract_lua" : "",
   "ignore" : "node_modules",
 
-  "paramArray" : { "itemTitle" : ["source", "url"], "schemaTitle" : "Endpoint"},
   "paramSchema" : [
     {
       "title" : "Poll Interval (sec)",
