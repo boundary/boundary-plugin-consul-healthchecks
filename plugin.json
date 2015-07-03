@@ -8,10 +8,9 @@
   "icon" : "icon.png",
   "command_lua" : "boundary-meter init.lua",
   "postExtract_lua" : "",
-  "command" : "node index.js",
-  "postExtract" : "npm install",
+  "command" : "boundary-meter init.lua",
+  "postExtract" : "",
   "ignore" : "node_modules",
-  "metrics" : [ ],
 
   "paramSchema" : [
     {
