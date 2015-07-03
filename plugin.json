@@ -12,6 +12,8 @@
   "postExtract" : "",
   "ignore" : "node_modules",
 
+  "metrics" : [ "" ],
+
   "paramSchema" : [
     {
       "title" : "Poll Interval (sec)",
