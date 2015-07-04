@@ -1,2 +1,11 @@
 {
+    "CONSUL_HEALTHCHECK_NA": {
+    "defaultAggregate": "MAX",
+    "defaultResolutionMS": 1000,
+    "description": "Non-applicable metric",
+    "displayName": "Non-applicable metric",
+    "displayNameShort": "consul-dontcare",
+    "unit": "duration"
+  }
+
 }
