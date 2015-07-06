@@ -13,7 +13,8 @@
   "ignore" : "node_modules",
 
   "metrics" : [ 
-      "CONSUL_HEALTHCHECK_STATE_CHANGES"
+      "CONSUL_HEALTHCHECK_STATE_CHANGES",
+      "CONSUL_HEALTHCHECK_COUNT"
   ],
 
   "paramSchema" : [

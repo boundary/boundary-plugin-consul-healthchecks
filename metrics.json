@@ -7,5 +7,14 @@
         "displayNameShort": "consul-healthcheck-statechanges",
         "unit": "number",
         "isDisabled": 0
+    },
+    "CONSUL_HEALTHCHECK_COUNT": {
+        "defaultAggregate": "MAX",
+        "defaultResolutionMS": 0,
+        "description": "Current number of Consul health checks",
+        "displayName": "Health Check Count",
+        "displayNameShort": "consul-healthcheck-count",
+        "unit": "number",
+        "isDisabled": 0
     }
 }

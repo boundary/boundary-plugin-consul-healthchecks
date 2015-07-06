@@ -27,6 +27,7 @@ None
 |Metric Name                |Description                                       |
 |:--------------------------|:-------------------------------------------------|
 |Health Check State Changes |Number of Consul health checks whose state changed|
+|Health Check Count         |Current number of registered Consul health checks |
 
 
 ### Dashboards

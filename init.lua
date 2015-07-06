@@ -76,9 +76,12 @@ function plugin:onParseValues(body, extra)
     local healthcheck_output_json = json.parse(body)
     local event_type = 'info'
     local statechange_count = 0
+    local healthcheck_count = 0
     local result = {}
     
     for i,healthcheck_output in next,healthcheck_output_json,nil do
+
+        healthcheck_count = healthcheck_count+1
         
         if healthcheck_result[healthcheck_output.CheckID] == nil or not string.find(healthcheck_result[healthcheck_output.CheckID], healthcheck_output.Status) then
             healthcheck_result[healthcheck_output.CheckID] = healthcheck_output.Status
@@ -155,6 +158,7 @@ function plugin:onParseValues(body, extra)
     end
 
     result['CONSUL_HEALTHCHECK_STATE_CHANGES'] = {value = statechange_count, source = extra.info.source}
+    result['CONSUL_HEALTHCHECK_COUNT'] = {value = healthcheck_count, source = extra.info.source}
     return result
 end
 
