@@ -12,7 +12,9 @@
   "postExtract" : "",
   "ignore" : "node_modules",
 
-  "metrics" : [ "CONSUL_HEALTHCHECK_NA" ],
+  "metrics" : [ 
+      "CONSUL_HEALTHCHECK_STATE_CHANGES"
+  ],
 
   "paramSchema" : [
     {

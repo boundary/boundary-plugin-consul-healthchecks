@@ -1,11 +1,11 @@
 {
-    "CONSUL_HEALTHCHECK_NA": {
-    "defaultAggregate": "MAX",
-    "defaultResolutionMS": 1000,
-    "description": "Non-applicable metric",
-    "displayName": "Non-applicable metric",
-    "displayNameShort": "consul-dontcare",
-    "unit": "duration"
-  }
-
+    "CONSUL_HEALTHCHECK_STATE_CHANGES": {
+        "defaultAggregate": "MAX",
+        "defaultResolutionMS": 0,
+        "description": "Number of Consul health checks whose state changed",
+        "displayName": "Health Check State Changes",
+        "displayNameShort": "consul-healthcheck-statechanges",
+        "unit": "number",
+        "isDisabled": 0
+    }
 }

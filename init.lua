@@ -37,8 +37,8 @@ local function createPollers(params)
     
     options.protocol = 'http'
     options.method = "GET"
-    options.meta = { source = "consul", ignoreStatusCode = false, debugEnabled = true }
-    options.wait_for_end = false
+    options.meta = { source = "Consul", ignoreStatusCode = false, debugEnabled = true }
+    options.wait_for_end = true -- make sure to get all Consul health check output
 
     local data_source = WebRequestDataSource:new(options)
 
@@ -75,11 +75,15 @@ function plugin:onParseValues(body, extra)
     
     local healthcheck_output_json = json.parse(body)
     local event_type = 'info'
+    local statechange_count = 0
+    local result = {}
     
     for i,healthcheck_output in next,healthcheck_output_json,nil do
         
         if healthcheck_result[healthcheck_output.CheckID] == nil or not string.find(healthcheck_result[healthcheck_output.CheckID], healthcheck_output.Status) then
             healthcheck_result[healthcheck_output.CheckID] = healthcheck_output.Status
+
+            statechange_count = statechange_count+1
 
             if string.find(healthcheck_output.Status, 'passing') then
                 event_type = 'info'  
@@ -149,8 +153,9 @@ function plugin:onParseValues(body, extra)
             end
         end
     end
-    
-    return {}
+
+    result['CONSUL_HEALTHCHECK_STATE_CHANGES'] = {value = statechange_count, source = extra.info.source}
+    return result
 end
 
 plugin:run()
