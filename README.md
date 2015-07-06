@@ -24,7 +24,10 @@ None
 
 ### Metrics Collected
 
-None
+|Metric Name                |Description                                       |
+|:--------------------------|:-------------------------------------------------|
+|Health Check State Changes |Number of Consul health checks whose state changed|
+
 
 ### Dashboards
 
